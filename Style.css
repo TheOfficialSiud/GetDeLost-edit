@@ -6,35 +6,59 @@
     font-family: sans-serif;
 
 }
-.banner{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(37, 37, 37, 0.75),rgba(4, 4, 4, 0.75)),url(background.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(0); /* Initial blur value */
-    transition: filter 0.5s; /* Transition effect for the blur */
+
+.background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
+.background img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(0);
+  transition: 0.5s;
+
+}
+
+.banner{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
 
 /* NavBar */
 
 .navbar{
-    width: 90%;
+    position: fixed;
+    width: 100%;
+    height: 3.5rem;
     margin: auto;
-    padding: 35px 0;
+    padding: 35px 0 0 0 ;
     display: flex;
     align-items: right;
     justify-content: space-between;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+
 }
 .logo{
-    width: 150px;
-    cursor: pointer;  
-    top: -50px; 
-    transform: translateX(-30%);
-    position: relative;
-    
+  position: relative;
+  width: 150px;
+  margin: 0 0 0 30px;
+  cursor: pointer;
+  top: -60px;
 }
 .navbar ul li{
     list-style: none;
@@ -340,27 +364,35 @@
 
 
 .find-box{
-  width: 80%;
+  width: 100%;
   margin: auto;
-  padding: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+
 }
 
 .Find-head{
+  font-size: 30px;
+  margin: 120px auto 30px auto;
   text-align: center;
-  margin-bottom: 50px;
   color: #fff;
 }
 
 .find-search{
-  width: 100%;
-  height: 30px;
+  width: 80%;
+  position: relative;
   padding: 10px;
   border: none;
   outline: none;
   background-color: #f5f5f5;
   border-radius: 5px;
   font-size: 16px;
-  margin-bottom: 50px;
+  color: #333;
+  margin-bottom: 40px;
+  transition: 0.5s;
 }
 
 .find-search:focus{
@@ -372,11 +404,15 @@
 }
 
 .All-items{
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  margin: auto;
   margin-bottom: 50px;
 }
+
+
 
 .Item{
   width: 100%;
